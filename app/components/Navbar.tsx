@@ -19,7 +19,7 @@ const NavBar = () => {
           <div className="flex items-center">
             <Link href="/" className='flex items-center'>
             <PiBeerBottleFill className='inline mx-2 text-xl' />
-              <p className="text-md font-bold inline">Barbasol</p>
+              <p className="text-md font-bold inline text-yellow-300">Barbasol</p>
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-4">
