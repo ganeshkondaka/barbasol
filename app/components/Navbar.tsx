@@ -19,7 +19,7 @@ const NavBar = () => {
           <div className="flex items-center">
             <Link href="/" className='flex items-center'>
             <PiBeerBottleFill className='inline mx-2 text-xl' />
-              <p className="text-md font-bold inline text-yellow-300">Barbasol</p>
+              <p className="text-md font-bold inline">Barbasol</p>
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-4">
@@ -44,7 +44,7 @@ const NavBar = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-zinc-900">
+        <div className="md:hidden fixed top-16 right-0 rounded-xl bg-zinc-900 ">
           <Link href="/features">
             <p className="block px-4 py-2 hover:bg-zinc-800">Features</p>
           </Link>
