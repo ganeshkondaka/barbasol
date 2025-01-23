@@ -23,21 +23,22 @@ export default function Sidebar() {
       link:'/dashboard/history'
     },
     {
-      name:"Billling",
+      name:"Billing",
       icon:BiMoney,
       link:'/dashboard/billing'
     },
     {
-      name:"Settins",
+      name:"Settings",
       icon:CiSettings,
       link:'/dashboard/settings'
     },
   ]
   return (
-    <div className='border-r-2 border-zinc-800 h-screen w-64'>
-        <Image src="/logo.svg" width={150} height={150} alt="logo" className='p-2 mt-4 ml-4' />
+    <div className='border-r-2 border-zinc-800 h-screen w-64 flex flex-col items-center'>
+        <Image src="/logo.svg" width={150} height={150} alt="logo" className='p-2 my-6' />
+        <hr className='w-full border-zinc-800 mb-2' />
         {menulist.map((menu, index) => (
-         <div key={index} className={`flex items-center p-2 ${path==menu.link && "bg-purple-700"} hover:bg-purple-800 cursor-pointer rounded-lg m-2 mr-10` }>
+         <div key={index} className={`flex items-center p-2 ${path==menu.link && "bg-purple-700"} hover:bg-purple-800 cursor-pointer rounded-lg m-1 mr-10 w-52` }>
             <menu.icon className='mr-2 text-xl font-bold'></menu.icon>
             <p>{menu.name}</p>
          </div>
