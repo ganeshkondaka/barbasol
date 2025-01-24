@@ -14,6 +14,127 @@ export interface TEMPLATE {
 }
 export const Templates: TEMPLATE[] = [
     {
+        name: 'English Grammer Check',
+        desc: 'AI Model to Correct your english grammer by providing the text',
+        icon: 'https://cdn-icons-png.flaticon.com/128/12596/12596700.png',
+        category: 'english',
+
+        slug: 'english-grammer-checker',
+        aiPrompt: 'Rewrite the inputText by correcting the grammer and give output in  in rich text editor format',
+        form: [
+            {
+                label: 'Enter text to correct the grammer',
+                field: 'input',
+                name: 'inputText',
+                required: true
+            },
+
+        ]
+    },
+    {
+        name: 'Write Code',
+        desc: 'AI Model to generate programming code in any language',
+        icon: 'https://cdn-icons-png.flaticon.com/128/6062/6062646.png',
+        category: 'Coding',
+
+        slug: 'write-code',
+        aiPrompt: 'Depends on user codeDescription write a code and give output in  in rich text editor format in code block ',
+        form: [
+            {
+                label: 'Enter description of code you want along with Programming Lang',
+                field: 'textarea',
+                name: 'codeDesscripton',
+                required: true
+            },
+
+        ]
+    },
+    {
+        name: 'Instagram Hash Tag Generator',
+        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+        icon: 'https://cdn-icons-png.flaticon.com/128/7045/7045432.png',
+        category: 'blog',
+
+        slug: 'instagram-hash-tag-generator',
+        aiPrompt: 'Generate 15 Instagram hash tag depends on a given keywords and give output in  in rich text editor format',
+        form: [
+            {
+                label: 'Enter Keywords for your instagram hastag',
+                field: 'input',
+                name: 'keywords',
+                required: true
+            },
+
+        ]
+    },
+    {
+
+        name: 'Youtube Description',
+        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+        category: 'Youtube Tool',
+        icon: 'https://cdn-icons-png.flaticon.com/128/2111/2111748.png',
+        slug: 'youtube-description',
+        aiPrompt: 'Generate Youtube description with emoji under 4-5 lines based on topic and outline in rich text editor format',
+        form: [
+            {
+                label: 'Enter your blog topic/title',
+                field: 'input',
+                name: 'topic',
+                required: true
+            },
+            {
+                label: 'Enter youtube Outline here',
+                field: 'textarea',
+                name: 'outline'
+            }
+        ]
+    },
+    {
+        name: 'Youtube SEO Title',
+        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+        category: 'Youtube Tools',
+        icon: 'https://cdn-icons-png.flaticon.com/128/402/402075.png',
+        slug: 'youtube-seo-title',
+        aiPrompt: 'Give me Best SEO optimized high ranked 5 title ideas bullet wise only bases on keywords and outline and give me result in HTML tags format',
+        form: [
+            {
+                label: 'Enter your youtube video topic keyowords',
+                field: 'input',
+                name: 'keywords',
+                required: true
+            },
+            {
+                label: 'Enter youtube description Outline here',
+                field: 'textarea',
+                name: 'outline'
+            }
+        ]
+
+    },
+    {
+        name: 'Youtube Tags',
+        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+        category: 'Youtube Tool',
+        icon: 'https://cdn-icons-png.flaticon.com/128/4674/4674918.png',
+        slug: 'youtube-tag',
+
+        aiPrompt: 'Generate 10 Youtube tags in bullet point based on title and outline in rich text editor format',
+
+        form: [
+            {
+                label: 'Enter your youtube title',
+                field: 'input',
+                name: 'title',
+                required: true
+            },
+            {
+                label: 'Enter youtube video Outline here (Optional)',
+                field: 'textarea',
+                name: 'outline'
+            }
+        ]
+    },
+    {
         name: 'Blog Title',
         desc: 'An AI tool that generate blog title depends on yout blog information',
         category: 'Blog',
@@ -72,74 +193,6 @@ export const Templates: TEMPLATE[] = [
             },
         ]
     },
-    {
-        name: 'Youtube SEO Title',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
-        category: 'Youtube Tools',
-        icon: 'https://cdn-icons-png.flaticon.com/128/402/402075.png',
-        slug: 'youtube-seo-title',
-        aiPrompt: 'Give me Best SEO optimized high ranked 5 title ideas bullet wise only bases on keywords and outline and give me result in HTML tags format',
-        form: [
-            {
-                label: 'Enter your youtube video topic keyowords',
-                field: 'input',
-                name: 'keywords',
-                required: true
-            },
-            {
-                label: 'Enter youtube description Outline here',
-                field: 'textarea',
-                name: 'outline'
-            }
-        ]
-
-    },
-    {
-
-        name: 'Youtube Description',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
-        category: 'Youtube Tool',
-        icon: 'https://cdn-icons-png.flaticon.com/128/2111/2111748.png',
-        slug: 'youtube-description',
-        aiPrompt: 'Generate Youtube description with emoji under 4-5 lines based on topic and outline in rich text editor format',
-        form: [
-            {
-                label: 'Enter your blog topic/title',
-                field: 'input',
-                name: 'topic',
-                required: true
-            },
-            {
-                label: 'Enter youtube Outline here',
-                field: 'textarea',
-                name: 'outline'
-            }
-        ]
-    },
-    {
-        name: 'Youtube Tags',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
-        category: 'Youtube Tool',
-        icon: 'https://cdn-icons-png.flaticon.com/128/4674/4674918.png',
-        slug: 'youtube-tag',
-
-        aiPrompt: 'Generate 10 Youtube tags in bullet point based on title and outline in rich text editor format',
-
-        form: [
-            {
-                label: 'Enter your youtube title',
-                field: 'input',
-                name: 'title',
-                required: true
-            },
-            {
-                label: 'Enter youtube video Outline here (Optional)',
-                field: 'textarea',
-                name: 'outline'
-            }
-        ]
-    },
-
     {
         name: 'Rewrite Article (Plagiarism Free)',
         desc: 'Use this tool to rewrite existing Article or Blog Post which can bypass AI detectors and also make it plagiarism free.',
@@ -206,24 +259,6 @@ export const Templates: TEMPLATE[] = [
         ]
     },
     {
-        name: 'Instagram Hash Tag Generator',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
-        icon: 'https://cdn-icons-png.flaticon.com/128/7045/7045432.png',
-        category: 'blog',
-
-        slug: 'instagram-hash-tag-generator',
-        aiPrompt: 'Generate 15 Instagram hash tag depends on a given keywords and give output in  in rich text editor format',
-        form: [
-            {
-                label: 'Enter Keywords for your instagram hastag',
-                field: 'input',
-                name: 'keywords',
-                required: true
-            },
-
-        ]
-    },
-    {
         name: 'Instagram Post/Reel Idea',
         desc: 'An AI tool that generate New and trending instagram idea depends on your niche',
         icon: 'https://cdn-icons-png.flaticon.com/128/1029/1029183.png',
@@ -236,42 +271,6 @@ export const Templates: TEMPLATE[] = [
                 label: 'Enter Keywords / Niche for your instagram idea',
                 field: 'input',
                 name: 'keywords',
-                required: true
-            },
-
-        ]
-    },
-    {
-        name: 'English Grammer Check',
-        desc: 'AI Model to Correct your english grammer by providing the text',
-        icon: 'https://cdn-icons-png.flaticon.com/128/12596/12596700.png',
-        category: 'english',
-
-        slug: 'english-grammer-checker',
-        aiPrompt: 'Rewrite the inputText by correcting the grammer and give output in  in rich text editor format',
-        form: [
-            {
-                label: 'Enter text to correct the grammer',
-                field: 'input',
-                name: 'inputText',
-                required: true
-            },
-
-        ]
-    },
-    {
-        name: 'Write Code',
-        desc: 'AI Model to generate programming code in any language',
-        icon: 'https://cdn-icons-png.flaticon.com/128/6062/6062646.png',
-        category: 'Coding',
-
-        slug: 'write-code',
-        aiPrompt: 'Depends on user codeDescription write a code and give output in  in rich text editor format in code block ',
-        form: [
-            {
-                label: 'Enter description of code you want along with Programming Lang',
-                field: 'textarea',
-                name: 'codeDesscripton',
                 required: true
             },
 

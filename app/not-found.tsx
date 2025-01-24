@@ -1,11 +1,24 @@
-import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
-export default function Not_found() {
+export default function NotFound() {
   return (
-    <div className='flex flex-col items-center justify-center mt-16 text-white'>
-        <img src="./bottle.jpg" alt="404 notfound image 9 in 1" 
-        className='w-72 rounded'/>
-        <h3 className='text-4xl font-bold mt-10'>404 Page not found</h3>
+    <div className="h-screen w-full flex flex-col items-center justify-center gap-4 bg-zinc-950">
+      <Image 
+        src="/bottle.jpg"  // Make sure this image exists in your public folder
+        alt="404"
+        width={300}
+        height={300}
+        priority
+      />
+      <h2 className="text-xl font-bold">Not Found</h2>
+      <p className="text-zinc-400">Could not find the requested resource</p>
+      <Link 
+        href="/dashboard" 
+        className="px-4 py-2 bg-zinc-800 rounded-lg hover:bg-zinc-700"
+      >
+        Return to Dashboard
+      </Link>
     </div>
   )
 }

@@ -18,14 +18,14 @@ export default function Browse_template({onsearch}:{onsearch:(val:string)=>void}
       <p className='font-bold  text-2xl md:text-3xl text-center'>Browse All Templates</p>
       <p className='text-[11px] md:text-sm text-zinc-400'>what would you like to create today</p>
 
-      <div className='flex items-center rounded-lg m-2 border-2 border-zinc-700 w-full max-w-xl'>
+      <div className='flex items-center rounded-lg m-2 border-2 border-zinc-700 w-full max-w-xl hover:bg-zinc-800'>
         <BiSearch className='inline ml-2'></BiSearch>
         <input
           type="text"
           placeholder="Search"
           // value={searchval}
           onChange={(e) => onsearch(e.target.value)}
-          className='inline bg-transparent  rounded-lg m-2 outline-none' />
+          className='inline bg-transparent  rounded-lg m-2 outline-none w-full' />
       </div>
     </div>
   )
