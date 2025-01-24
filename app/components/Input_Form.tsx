@@ -4,13 +4,15 @@ import { TEMPLATE } from '../(data)/Template'
 import Image from 'next/image'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { VscLoading } from 'react-icons/vsc'
 
 interface InputFormProps {
   selectedTemplate: TEMPLATE;
   useInputdata: any;
+  loading:boolean
 }
 
-export default function Input_Form({ selectedTemplate, useInputdata }: InputFormProps) {
+export default function Input_Form({ selectedTemplate, useInputdata ,loading}: InputFormProps) {
 
   const [formData, setFormData] = useState<any>({})
 
@@ -50,7 +52,10 @@ export default function Input_Form({ selectedTemplate, useInputdata }: InputForm
             </div>
           ))
         }
-        <button type='submit'className='mt-6 bg-white text-black rounded p-1 w-full'>submit</button>
+        <button 
+        type='submit'
+        disabled={loading}
+        className=' flex flex-row gap-2 items-center text-center justify-center mt-6  bg-white text-black rounded p-1 w-full'>{loading && <VscLoading className='animate-spin '></VscLoading>}submit</button>
       </form>
     </div>
   )
