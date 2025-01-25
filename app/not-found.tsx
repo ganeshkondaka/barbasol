@@ -12,7 +12,7 @@ export default function NotFound() {
         priority
       />
       <h2 className="text-xl font-bold">Not Found</h2>
-      <p className="text-zinc-400">Could not find the requested resource</p>
+      <p className="text-zinc-200 font-bold">----⚡⚡ <strong>Coming soon-ish</strong> , just polishing things up! 🕐🕜🕝--- </p>
       <Link 
         href="/dashboard" 
         className="px-4 py-2 bg-zinc-800 rounded-lg hover:bg-zinc-700"

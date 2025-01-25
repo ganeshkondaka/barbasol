@@ -27,11 +27,11 @@ export default function Page(props: PROPS) {
     setLoading(false)
   }
   return (
-    <div className=' p-10'>
-      <Link href="/dashboard" className='hover:bg-purple-800 border border-purple-600 text-white p-3  rounded-lg inline items-center ' > ◀ Back</Link>
-      <div className="grid grid-cols-3 gap-6 mt-5 ">
+    <div className='m-2 md:p-10'>
+      <Link href="/dashboard" className='hover:bg-purple-800 border border-purple-600 text-white p-3 text-sm font-bold rounded-lg inline items-center ' > ◀ Back</Link>
+      <div className='flex flex-col md:grid md:grid-cols-3 gap-4 p-4 md:p-10'>
 
-        <div className='space-y-4'>
+        <div className='space-y-4 w-full'>
           {selectedTemplate && (
             <Input_Form
               selectedTemplate={selectedTemplate}
@@ -41,7 +41,7 @@ export default function Page(props: PROPS) {
           )}
         </div>
 
-        <div className="col-span-2">
+        <div className="w-full md:col-span-2">
           <TextEditor aiResponse={aiResponse}></TextEditor>
         </div>
 
