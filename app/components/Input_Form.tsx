@@ -43,15 +43,15 @@ export default function Input_Form({ selectedTemplate, useInputdata, loading }: 
     // if (localStorage.getItem('email') != process.env.email) {
       const current_count = parseInt(localStorage.getItem('count') || '0')
       localStorage.setItem('count', (current_count - 1).toString())
-      console.log('the count issup', localStorage.getItem('count'))
+      // console.log('the count issup', localStorage.getItem('count'))
 
     // } 
   }
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    console.log('the count iss', localStorage.getItem('count'))
-  }, [])
+  //   console.log('the count iss', localStorage.getItem('count'))
+  // }, [])
 
 
   return (

@@ -1,57 +1,48 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
 import { BiCopy } from 'react-icons/bi';
+import DOMPurify from 'dompurify';
 
 export default function TextEditor({ aiResponse }: { aiResponse: string }) {
     const editorRef = useRef<Editor>(null);
+    const [sanitizedResponse, setSanitizedResponse] = useState<string>('');
 
-    const cleanRTFContent = (rtfContent: string) => {
-        // Remove RTF formatting
-        return rtfContent
-            .replace(/<[^>]*>/g, '')  // Remove HTML tags
-            .replace(/\{[\s\S]*?\\fonttbl[\s\S]*?\}/g, '')  // Remove font table
-            .replace(/\{[\s\S]*?\\colortbl[\s\S]*?\}/g, '') // Remove color table
-            .replace(/\\[a-z0-9]+/g, '')                    // Remove RTF commands
-            .replace(/\{|\}/g, '')                          // Remove braces
-            .split('\\par')                                 // Split by paragraphs
-            .map(line => line.trim())                      // Clean each line
-            .filter(line => line)                          // Remove empty lines
-            .join('\n');                                   // Join with newlines
-    };
-
-    const cleanContent = cleanRTFContent(aiResponse);
+    useEffect(() => {
+        if (aiResponse) {
+            // Sanitize the AI response to prevent any XSS or rendering issues
+            const sanitizedHtml = DOMPurify.sanitize(aiResponse);
+            const cleanHtml = sanitizedHtml.replace(/```html|```/g, '');
+            setSanitizedResponse(cleanHtml);
+        }
+    }, [aiResponse]);
 
     useEffect(() => {
         if (editorRef.current) {
             const editorInstance = editorRef.current.getInstance();
-            editorInstance.setMarkdown(cleanContent);
+            editorInstance.setHTML(sanitizedResponse);
         }
-    }, [cleanContent])
+    }, [sanitizedResponse]);
 
     return (
-        <div >
+        <div>
             <div className='font-bold px-4 flex justify-between items-center p-2 bg-white rounded text-black'>
                 <p className='text-zinc-700 font-extrabold'>Your result</p>
                 <button 
-                onClick={()=>{navigator.clipboard.writeText(cleanContent)}}
-                className='inline text-sm p-2 text-white bg-violet-600 hover:bg-violet-500 rounded-lg'><BiCopy className='inline font-extrabold'></BiCopy> Copy</button>
+                    onClick={() => { navigator.clipboard.writeText(aiResponse); }}
+                    className='inline text-sm p-2 text-white bg-violet-600 hover:bg-violet-500 rounded-lg'>
+                    <BiCopy className='inline font-extrabold'></BiCopy> Copy
+                </button>
             </div>
             <Editor
                 ref={editorRef}
-                initialValue="hello react editor world!"
                 height="600px"
                 initialEditType="wysiwyg"
                 useCommandShortcut={true}
-                onChange={() => {
-                    if (editorRef.current) {
-                        console.log(editorRef.current.getInstance().getMarkdown());
-                    }
-                }}
                 theme="white"
             />
         </div>
-    )
+    );
 }

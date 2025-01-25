@@ -19,7 +19,7 @@ export default function Hero() {
                 <p className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">Content Generation</p>
                 <p className="text-4xl md:text-6xl font-bold">Made Simple</p>
             </div>
-            <div className='text-center text-zinc-500 text-[11px] md:text-sm mt-6'>9-in-1 AI tool suite for all your content needs. <br /> Generate hashtags, titles, debug code, and more with just one click. <br /> &#40; just like Barbasol 😆 &#41; </div>
+            <div className='text-center text-zinc-500 text-[11px] md:text-sm mt-6'>18-in-1 AI tool suite for all your content needs. <br /> Generate hashtags, titles, debug code, and more with just one click. <br /> &#40; just like Barbasol 😆 &#41; </div>
             <div className='flex flex-row items-center justify-center gap-5 mt-6'>
 
                 {/* <button className='hover:bg-purple-500 text-sm border border-zinc-700 rounded-lg font-bold px-5 bg-slate-200 text-black p-3'>learn more</button> */}

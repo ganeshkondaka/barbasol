@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate"
-
   },
   "dependencies": {
     "@clerk/nextjs": "^6.9.15",
@@ -19,6 +18,7 @@
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dompurify": "^3.2.3",
     "lucide-react": "^0.473.0",
     "next": "15.1.5",
     "react": "^19.0.0",
