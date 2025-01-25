@@ -10,6 +10,16 @@ interface PROPS {
   params: Promise<{ slug: string }> // params is now a Promise
 }
 
+interface FormData {
+  [key: string]: string;
+}
+
+// interface InputFormProps {
+//   selectedTemplate: TEMPLATE;
+//   useInputdata: (data: FormData) => Promise<void>;
+//   loading: boolean;
+// }
+
 export default function Page(props: PROPS) {
   const params = use(props.params); // Unwrapping params with React.use()
   const { slug } = params; // Now we can safely access slug
@@ -18,7 +28,7 @@ export default function Page(props: PROPS) {
   const [loading, setLoading] = useState(false)
   const [aiResponse, setaiResponse] = useState('')
 
-  const Aicontent = async (data: any) => {
+  const Aicontent = async (data: FormData) => {
     setLoading(true)
     const selecetdPrompt = selectedTemplate?.aiPrompt
     const finalPrompt = JSON.stringify(data) + ',' + selecetdPrompt
@@ -35,7 +45,7 @@ export default function Page(props: PROPS) {
           {selectedTemplate && (
             <Input_Form
               selectedTemplate={selectedTemplate}
-              useInputdata={(data: any) => Aicontent(data)}
+              useInputdata={(data: FormData) => Aicontent(data)}
               loading={loading}
             />
           )}

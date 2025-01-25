@@ -6,7 +6,7 @@ import { Editor } from '@toast-ui/react-editor';
 import { BiCopy } from 'react-icons/bi';
 
 export default function TextEditor({ aiResponse }: { aiResponse: string }) {
-    const editorRef: any = useRef({})
+    const editorRef = useRef<Editor>(null);
 
     const cleanRTFContent = (rtfContent: string) => {
         // Remove RTF formatting
@@ -25,9 +25,11 @@ export default function TextEditor({ aiResponse }: { aiResponse: string }) {
     const cleanContent = cleanRTFContent(aiResponse);
 
     useEffect(() => {
-        const editorInstance = editorRef.current.getInstance()
-        editorInstance.setMarkdown(cleanContent)
-    }, [aiResponse])
+        if (editorRef.current) {
+            const editorInstance = editorRef.current.getInstance();
+            editorInstance.setMarkdown(cleanContent);
+        }
+    }, [cleanContent])
 
     return (
         <div >
@@ -43,7 +45,11 @@ export default function TextEditor({ aiResponse }: { aiResponse: string }) {
                 height="600px"
                 initialEditType="wysiwyg"
                 useCommandShortcut={true}
-                onChange={() => console.log(editorRef.current.getInstance().getMarkdown())}
+                onChange={() => {
+                    if (editorRef.current) {
+                        console.log(editorRef.current.getInstance().getMarkdown());
+                    }
+                }}
                 theme="white"
             />
         </div>

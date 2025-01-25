@@ -7,23 +7,26 @@ import { Textarea } from '@/components/ui/textarea'
 import { VscLoading } from 'react-icons/vsc'
 // import { useUser } from '@clerk/nextjs'
 // import { stringify } from 'querystring'
+interface FormData {
+  [key: string]: string;
+}
 
 interface InputFormProps {
   selectedTemplate: TEMPLATE;
-  useInputdata: any;
+  useInputdata: (data: FormData) => Promise<void>;
   loading: boolean
 }
 
 export default function Input_Form({ selectedTemplate, useInputdata, loading }: InputFormProps) {
 
-  const [formData, setFormData] = useState<any>({})
+  const [formData, setFormData] = useState({})
 
-  const handleChange = (e: any) => {
+  const HandleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData((prev: any) => ({ ...prev, [name]: value }));
+    setFormData((prev: FormData) => ({ ...prev, [name]: value }));
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const HandleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // console.log(formData)
     if(localStorage.getItem('count')=='0'){
@@ -33,7 +36,7 @@ export default function Input_Form({ selectedTemplate, useInputdata, loading }: 
 
   }
 
-  const handlecount = () => {
+  const Handlecount = () => {
     if(localStorage.getItem('count')=='0'){
       return alert('you have reached the limit 👍')
     }
@@ -58,22 +61,22 @@ export default function Input_Form({ selectedTemplate, useInputdata, loading }: 
       <h2 className='text-2xl'>{selectedTemplate.name}</h2>
       <p className='text-sm text-zinc-500'>{selectedTemplate.desc}</p>
 
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
+      <form onSubmit={HandleSubmit} className='flex flex-col gap-4 w-full'>
         {
           selectedTemplate.form.map((item, index) => (
             <div key={index} className='flex flex-col gap-2 w-full'>
               <label>{item.label}</label>
               {item.field == 'input' ?
-                <Input name={item.name} required={item?.required} onChange={handleChange} className='border-2 border-zinc-600 w-full h-16'></Input>
+                <Input name={item.name} required={item?.required} onChange={HandleChange} className='border-2 border-zinc-600 w-full h-16'></Input>
                 : item.field == 'textarea' ?
-                  <Textarea name={item.name} required={item?.required} onChange={handleChange} className='border-2 border-zinc-600'></Textarea>
+                  <Textarea name={item.name} required={item?.required} onChange={HandleChange} className='border-2 border-zinc-600'></Textarea>
                   : null}
             </div>
           ))
         }
         <button
           type='submit'
-          onClick={handlecount}
+          onClick={Handlecount}
           disabled={loading}
           className=' flex flex-row gap-2 items-center text-center justify-center mt-2 md:mt-6  bg-white text-black rounded p-1 w-full'>{loading && <VscLoading className='animate-spin '></VscLoading>}submit</button>
       </form>
