@@ -9,7 +9,8 @@ export default function Page() {
 
   return (
     <div>
-      <div className='w-full hidden md:block'>
+      {/* hidden md:block */}
+      <div className='w-full'>
         <Searchbar></Searchbar>
         <hr className='w-full border-zinc-800 ' />
       </div>
