@@ -38,10 +38,10 @@ export default function Sidebar() {
     <div className='border-r-2 border-zinc-800 h-screen w-64 flex flex-col items-center'>
 
       {/* <Image src="/logo.svg" width={150} height={150} alt="logo" className='p-2 my-6' /> */}
-      <Link href="/" className='flex items-center py-6'>
-        <PiBeerBottleFill className='inline mx-2 text-2xl' />
-        <p className="text-2xl font-extrabold font-serif inline">Barbasol</p>
-      </Link>
+      <Link href="/" className='flex items-center py-6 mr-4'>
+        <PiBeerBottleFill className='inline mx-2 text-2xl text-yellow-400' />
+        <p className={`text-2xl font-extrabold inline font-sans text-purple-100`}>Barbasol</p>      </Link>
+        {/* <p className={`text-2xl font-extrabold inline `}>Barbasol</p>      </Link> */}
       <hr className='w-full border-zinc-800 mb-2' />
 
       {menulist.map((menu, index) => (

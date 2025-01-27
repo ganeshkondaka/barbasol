@@ -68,6 +68,27 @@ export const Templates: TEMPLATE[] = [
         ]
     },
     {
+        "name": "Twitter Short Post Generator",
+        "desc": "An AI tool that crafts concise, engaging, and high-impact tweets based on your provided topic and key points while staying within the Twitter character limit.",
+        "category": "Social Media Tools",
+        "icon": "https://cdn-icons-png.flaticon.com/128/733/733579.png",
+        "slug": "twitter-short-post",
+        "aiPrompt": "Generate a highly engaging, concise tweet under 280 characters based on the provided topic and key points. Ensure the tone is natural and conversational .", //and a little friendly slangy way
+        "form": [
+            {
+                "label": "Enter the main topic of your tweet",
+                "field": "input",
+                "name": "topic",
+                "required": true
+            },
+            {
+                "label": "Provide key points to include in the tweet",
+                "field": "textarea",
+                "name": "keypoints"
+            }
+        ]
+    },    
+    {
 
         name: 'Youtube Description',
         desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',

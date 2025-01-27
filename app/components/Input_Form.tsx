@@ -59,10 +59,12 @@ export default function Input_Form({ selectedTemplate, useInputdata, loading }: 
         return alert('ran out of credits , you have reached the limit , subscribe to continue..👍')
 
       }
-
+      setloadinging(true)
       const response2 = await axios.put('/api/credits/update_count', { count_val })
       // const new_count_val = response2.data
-      // console.log('new_count_val is ::', new_count_val.count)
+      console.log('new_count_val is ::', response2.data.count)
+      setthecount(response2.data.count);
+
       setloadinging(false)
 
     } catch (error) {
@@ -114,7 +116,7 @@ export default function Input_Form({ selectedTemplate, useInputdata, loading }: 
 
   return (
     <div className=' flex items-center flex-col h-full p-4 md:p-10 border-4 border-zinc-700 rounded-lg space-y-3 py-5 md:py-10'>
-      <p>Credits :{thecount}/5</p>
+      <p className='inline'>Credits : {thecount ?  thecount:(<VscLoading className='animate-spin inline'></VscLoading>)} / 5</p>
       <Image src={selectedTemplate.icon} width={70} height={70} alt='template logo'></Image>
       <h2 className='text-2xl'>{selectedTemplate.name}</h2>
       <p className='text-sm text-zinc-500'>{selectedTemplate.desc}</p>
