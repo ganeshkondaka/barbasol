@@ -3,7 +3,11 @@ import { currentUser } from "@clerk/nextjs/server"
 
 export const checkUser = async () => {
     const user = await currentUser();
-    // console.log('the user from clerk is :', user)
+    if (!user || !user.emailAddresses || user.emailAddresses.length === 0) {
+        console.error("No user or email found from Clerk.");
+        return null; // Return `null` instead of breaking the app
+    }
+
     const user_email=user?.emailAddresses[0].emailAddress
 
     const loggedin_user = await prisma.user.findUnique({
@@ -22,7 +26,7 @@ export const checkUser = async () => {
         }
     })
 
-    console.log('the newly registr user is ',new_user)
+    // console.log('the newly registr user is ',new_user)
     
     return new_user
 }

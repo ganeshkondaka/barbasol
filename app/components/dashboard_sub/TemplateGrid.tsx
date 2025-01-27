@@ -30,6 +30,7 @@ export default function TemplateGrid({ searchInput }: { searchInput: string }) {
                             width={50}
                             height={50}
                             className='rounded-lg w-8 h-8 md:w-10 md:h-10'
+                            suppressHydrationWarning={true}
                         ></Image>
                         <p className='text-sm md:text-xl font-bold text-slate-300'>{item.name}</p>
                         <p className='text-[9px] md:text-sm text-zinc-400'>{item.desc}</p>

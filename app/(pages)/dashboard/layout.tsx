@@ -1,7 +1,7 @@
 'use client'
 
 import Sidebar from "@/app/components/Sidebar";
-import { useUser } from "@clerk/nextjs";
+import axios from "axios";
 import { useEffect } from "react";
 
 export default function Layout({
@@ -10,12 +10,16 @@ export default function Layout({
     children: React.ReactNode;
 }>) {
 
-    const { user } = useUser();
     useEffect(() => {
-        localStorage.setItem('count', '5')
-        const emailId = user?.primaryEmailAddress?.emailAddress;
-        localStorage.setItem('email', emailId || '')
-    }, [user])
+        const checking_user=async()=>{
+            // console.log('checking user fron daskboard layout before.............')
+            const user = await axios.get('/api/chekuser')
+            // console.log('checking user fron daskboard layout',user.data.email)
+        }
+
+        checking_user()
+
+    }, [])
 
     return (
         <div className="flex w-full">

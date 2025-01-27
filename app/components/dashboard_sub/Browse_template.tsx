@@ -24,6 +24,7 @@ export default function Browse_template({onsearch}:{onsearch:(val:string)=>void}
           type="text"
           placeholder="Search"
           // value={searchval}
+          suppressHydrationWarning={true}
           onChange={(e) => onsearch(e.target.value)}
           className='inline bg-transparent  rounded-lg m-2 outline-none w-full' />
       </div>
