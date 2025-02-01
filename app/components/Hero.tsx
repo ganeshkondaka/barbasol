@@ -41,6 +41,7 @@ export default function Hero() {
                 ease={80}
                 color={"#ffffff"}
                 // staticity={40}
+                vx={0.3}
                 refresh
             />
         </div>

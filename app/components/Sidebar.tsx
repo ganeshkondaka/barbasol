@@ -39,7 +39,7 @@ export default function Sidebar() {
 
       {/* <Image src="/logo.svg" width={150} height={150} alt="logo" className='p-2 my-6' /> */}
       <Link href="/" className='flex items-center py-6 mr-4'>
-        <PiBeerBottleFill className='inline mx-2 text-2xl text-yellow-4yy00' />
+        <PiBeerBottleFill className='inline mx-2 text-2xl text-yellow-400' />
         <p className={`text-2xl font-extrabold inline font-sans text-purple-100`}>Barbasol</p>      </Link>
         {/* <p className={`text-2xl font-extrabold inline `}>Barbasol</p>      </Link> */}
       <hr className='w-full border-zinc-800 mb-2' />

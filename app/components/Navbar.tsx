@@ -23,13 +23,13 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/features">
+            <Link href="#features" className=''>
               <p className="hover:underline">Features</p>
             </Link>
-            <Link href="/pricing">
+            <Link href="#pricing">
               <p className="hover:underline">Pricing</p>
             </Link>
-            <Link href="/contact">
+            <Link href="#contact">
               <p className="hover:underline">Contact</p>
             </Link>
           </div>

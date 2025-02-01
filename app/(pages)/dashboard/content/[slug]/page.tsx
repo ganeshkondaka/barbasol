@@ -31,8 +31,9 @@ export default function Page(props: PROPS) {
   const Aicontent = async (data: FormData) => {
     setLoading(true)
     const selecetdPrompt = selectedTemplate?.aiPrompt
-    const finalPrompt = JSON.stringify(data) + ',' + selecetdPrompt
+    const finalPrompt = JSON.stringify(data) + ',' + selecetdPrompt+','+'just give me data only , dont give anything others like wishing or informing, just give me sata baout this prompt asked you precisely'
     const result = await chatSession.sendMessage(finalPrompt)
+    console.log(' the resulted resonids edtata is :',result.response.text())
     setaiResponse(result.response.text())
     setLoading(false)
   }
