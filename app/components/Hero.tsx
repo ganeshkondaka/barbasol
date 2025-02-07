@@ -23,7 +23,7 @@ export default function Hero() {
             <div className='flex flex-row items-center justify-center gap-5 mt-6'>
 
                 {/* <button className='hover:bg-purple-500 text-sm border border-zinc-700 rounded-lg font-bold px-5 bg-slate-200 text-black p-3'>learn more</button> */}
-                <Link href={'/learnmore'}> <RainbowButton className='scale-100 hover:scale-105 ' >Learn more</RainbowButton></Link>
+                <Link href={'#features'}> <RainbowButton className='scale-100 hover:scale-105 ' >Learn more</RainbowButton></Link>
                 <Link href={'/dashboard'} className='scale-100 hover:scale-105 hover:bg-zinc-800 text-sm border border-zinc-700 px-5 rounded-lg font-bold bg-transparent text-white p-3'>Get started</Link>
                 {/* <ShineBorder className="relative flex  w-auto h-auto flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
                     color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
