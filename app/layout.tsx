@@ -41,9 +41,10 @@ export default async function RootLayout({
       appearance={{
         baseTheme: dark,
       }}>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body
-          className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}>
+          className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}
+          suppressHydrationWarning>
           {children}
         </body>
       </html>

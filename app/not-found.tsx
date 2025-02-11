@@ -11,7 +11,7 @@ export default function NotFound() {
         height={300}
         priority
       />
-      <h2 className="text-xl font-bold">Not Found</h2>
+      <h2 className="text-2xl font-bold">Not Found</h2>
       <p className="text-zinc-200 font-bold">----⚡⚡ <strong>Coming soon-ish</strong> , just polishing things up! 🕐🕜🕝--- </p>
       <Link 
         href="/dashboard" 

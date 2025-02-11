@@ -19,7 +19,17 @@ model User {
   createdAt DateTime  @default(now())
   updatedAt DateTime?
   count     Int       @default(5)
-  // Access    Access[]
+  History   History[]
+}
+
+model History {
+  id          String   @id @default(uuid())
+  template    String
+  user_input  String
+  ai_response String
+  date        DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [email])
+  userId      String
 }
 
 // model Access {
