@@ -28,8 +28,8 @@ model History {
   user_input  String
   ai_response String
   date        DateTime @default(now())
-  user        User     @relation(fields: [userId], references: [email])
-  userId      String
+  user        User     @relation(fields: [useremail], references: [email])
+  useremail   String
 }
 
 // model Access {

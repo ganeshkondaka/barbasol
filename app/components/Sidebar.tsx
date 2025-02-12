@@ -21,7 +21,7 @@ export default function Sidebar() {
     {
       name: "History",
       icon: BiHistory,
-      link: '/dashboard/history'
+      link: '/dashboard/History'
     },
     {
       name: "Billing",
