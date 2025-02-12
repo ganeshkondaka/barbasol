@@ -1,8 +1,8 @@
 'use client'
 
 import Sidebar from "@/app/components/Sidebar";
-import axios from "axios";
-import { useEffect } from "react";
+// import axios from "axios";
+// import { useEffect } from "react";
 
 export default function Layout({
     children,
@@ -10,16 +10,16 @@ export default function Layout({
     children: React.ReactNode;
 }>) {
 
-    useEffect(() => {
-        const checking_user=async()=>{
-            // console.log('checking user fron daskboard layout before.............')
-            const user = await axios.get('/api/chekuser')
-            // console.log('checking user fron daskboard layout',user.data.email)
-        }
+    // useEffect(() => {
+    //     const checking_user=async()=>{
+    //         // console.log('checking user fron daskboard layout before.............')
+    //         const user = await axios.get('/api/chekuser')
+    //         // console.log('checking user fron daskboard layout',user.data.email)
+    //     }
 
-        checking_user()
+    //     checking_user()
 
-    }, [])
+    // }, [])
 
     return (
         <div className="flex w-full">
