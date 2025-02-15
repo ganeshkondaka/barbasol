@@ -137,7 +137,7 @@ export default function Input_Form({ selectedTemplate, useInputdata, loading }: 
         <button
           type='submit'
           // onClick={Handlecount}
-          disabled={loadinging}
+          disabled={loadinging || loading}
           className=' flex flex-row gap-2 items-center text-center justify-center mt-2 md:mt-6  bg-white text-black rounded p-1 w-full'>{(loadinging || loading) && <VscLoading className='animate-spin '></VscLoading>}submit</button>
       </form>
     </div>

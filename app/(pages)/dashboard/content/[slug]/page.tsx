@@ -36,18 +36,19 @@ export default function Page(props: PROPS) {
     const result = await chatSession.sendMessage(finalPrompt)
     const responseText = await result.response.text(); // Awaiting response properly
     console.log(' the resulted responded data is :',responseText)
+    setLoading(false)
     setaiResponse(responseText)
+    // console.log('the data is :', Object.values(data).join(' '))
     
     await save_history(data, slug, responseText)
     
-    setLoading(false)
   }
 
   const save_history = async (data: FormData, slug: string, aiResponse: string) => {
     try {
       // const aires=await aiResponse 
       const added_history = await axios.post('/api/create-history', { data, slug,  aires:aiResponse })
-      // console.log(added_history)
+      console.log(added_history)
     } catch (error) {
       console.log('error fron history frotned:', error)
     }
