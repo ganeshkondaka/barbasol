@@ -26,7 +26,7 @@ export default function Sidebar() {
     {
       name: "Billing",
       icon: BiMoney,
-      link: '/dashboard/billing'
+      link: '/dashboard/payments'
     },
     {
       name: "Settings",

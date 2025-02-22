@@ -14,12 +14,13 @@ datasource db {
 }
 
 model User {
-  id        String    @id @default(uuid())
-  email     String    @unique
-  createdAt DateTime  @default(now())
-  updatedAt DateTime?
-  count     Int       @default(5)
-  History   History[]
+  id              String            @id @default(uuid())
+  email           String            @unique
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime?
+  count           Int               @default(5)
+  History         History[]
+  Payment_history Payment_history[]
 }
 
 model History {
@@ -30,6 +31,16 @@ model History {
   date        DateTime @default(now())
   user        User     @relation(fields: [useremail], references: [email])
   useremail   String
+}
+
+model Payment_history {
+  id                  String   @id @default(uuid())
+  razorpay_order_id   String
+  razorpay_payment_id String
+  razorpay_signature  String
+  date                DateTime @default(now())
+  user                User     @relation(fields: [useremail], references: [email])
+  useremail           String
 }
 
 // model Access {

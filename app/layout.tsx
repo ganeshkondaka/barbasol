@@ -6,6 +6,7 @@ import {
 } from '@clerk/nextjs'
 import "./globals.css";
 import { checkUser } from "@/utils/CheckUser";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,10 @@ export default async function RootLayout({
         baseTheme: dark,
       }}>
       <html lang="en" suppressHydrationWarning>
+      {/* <Script
+        id="razorpay-checkout-js"
+        src="https://checkout.razorpay.com/v1/checkout.js"
+      /> */}
         <body
           className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}
           suppressHydrationWarning>
