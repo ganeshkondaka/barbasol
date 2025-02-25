@@ -6,7 +6,7 @@ import { FaTwitter } from 'react-icons/fa'
 
 export default function Features() {
   return (
-    <section className="py-20 bg-zinc-950 text-white" id='features'>
+    <section className="pt-20 bg-zinc-950 text-white" id='features'>
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-center text-4xl md:text-5xl font-bold mb-12">Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
