@@ -20,7 +20,7 @@ export async function GET() {
             loggedin_user = await prisma.user.create({
                 data: { email: user_email }
             });
-            // console.log("Newly registered user:", loggedin_user);
+            console.log("Newly registered user:", loggedin_user);
         }
 
         return NextResponse.json(loggedin_user);

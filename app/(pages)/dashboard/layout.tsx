@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "@/app/components/Sidebar";
 import { Menu } from "lucide-react"; // Icon for the hamburger menu
+import axios from "axios";
 
 export default function Layout({
     children,
@@ -10,6 +11,17 @@ export default function Layout({
     children: React.ReactNode;
 }>) {
     const [isOpen, setIsOpen] = useState(false);
+
+    // useEffect(() => {
+    //     const checking_user = async () => {
+    //         // console.log('checking user fron daskboard layout before.............')
+    //         const user = await axios.get('/api/chekuser')
+    //         console.log('checking user fron daskboard layout', user.data.email)
+    //     }
+
+    //     checking_user()
+
+    // }, [])
 
     return (
         <div className="flex w-full">

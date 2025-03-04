@@ -29,7 +29,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    // const user = await checkUser()
+    const user = await checkUser()
     // console.log('user form layout', user)
 
   // async () => {
