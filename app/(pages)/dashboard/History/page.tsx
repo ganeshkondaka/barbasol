@@ -9,26 +9,10 @@ export default function Page() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    //redis client created 
-    // const redisClient = createClient({ url: 'redis://localhost:6379' })
-    // redisClient.connect()
-
-    // redisClient.on('connect', () => {
-    //   console.log('redis connected')
-    // })
-
     const user_history = async () => {
       try {
-        // //getting teh cached hostory
-        // const cached_history =await  redisClient.get('history')
-        // if (cached_history) {
-        //   console.log('getting data from cache')
-        //   setHistory(JSON.parse(cached_history))
-        // }
-        
         const result = await axios.get('/api/user-history')
-        // console.log('result is :', result.data)
-        // console.log('getting data from for firsttime from state')
+        console.log('result is :', result.data)
         setHistory(result.data.history)
       } catch (error) {
         console.log('error is :', error)

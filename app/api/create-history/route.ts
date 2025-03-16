@@ -1,4 +1,3 @@
-import { redisClient } from "@/app/layout";
 import prisma from "@/dbprisma";
 import { currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
@@ -19,14 +18,6 @@ export async function POST(req: Request) {
                 useremail: user_email || '',
             }
         })
-
-        //clearing cache
-        await redisClient.del('history')
-        
-        // added cache for 1 hr
-        // console.log('added cache')
-        // redisClient.setEx('history', 3600, JSON.stringify(user_history))
-
         // console.log('user-hiatory saved in db is : ', user_history)
         return NextResponse.json({
             history: user_history
